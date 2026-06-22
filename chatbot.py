@@ -9,6 +9,7 @@ api_key = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=api_key)
 
 model = genai.GenerativeModel("gemini-2.5-flash")
+chat = model.start_chat(history=[])
 print("GEMINI CHATBOT")
 print("Type 'exit' to end the conversation.")
 while True:
@@ -20,7 +21,7 @@ while True:
         print("Exiting the chatbot. Goodbye!")
         break
     try:
-        res=model.generate_content(text)
+        res=chat.send_message(text)
         print("Chatbot: ", res.text)
         with open("chat history.txt","a") as f:
             f.write("You: "+text+"\n")
