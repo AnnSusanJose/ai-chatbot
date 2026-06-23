@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 import google.generativeai as genai
+from datetime import datetime
 
 load_dotenv()
 
@@ -23,8 +24,10 @@ while True:
     try:
         res=chat.send_message(text)
         print("Chatbot: ", res.text)
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open("chat history.txt","a") as f:
-            f.write("You: "+text+"\n")
-            f.write("Chatbot: "+res.text+"\n")
+            f.write(f"\n[{timestamp}]\n")
+            f.write("You: " + text + "\n")
+            f.write("Chatbot: " + res.text + "\n")
     except Exception as e:
         print("An error occurred:", e)
