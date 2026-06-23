@@ -1,68 +1,40 @@
-# AI Chatbot 
+# AI Chatbot
 
-A command-line AI chatbot built using Python and the Google Gemini API.
+A simple command-line AI chatbot built using Python and the Google Gemini API.
 
 ## Features
 
-* Interactive chatbot conversation
-* Google Gemini 2.5 Flash integration
-* Environment variable support using `.env`
-* Chat history logging
-* Exception handling
-* Empty input validation
-* Exit command support
-
-## Technologies Used
-
-* Python
-* Google Gemini API
-* python-dotenv
-* Git
-* GitHub
-
-## Installation
-
-Install the required packages:
-
-```bash
-pip install google-generativeai
-pip install python-dotenv
-```
+* Conversational AI using Gemini
+* Session memory using chat history
+* Timestamped chat logging
+* Secure API key management with `.env`
+* Error handling for API requests
+* Exit command to end the chat
 
 ## Setup
 
-Create a `.env` file in the project directory:
+Install dependencies:
 
-```text
+```bash
+pip install google-generativeai python-dotenv
+```
+
+Create a `.env` file:
+
+```env
 GEMINI_API_KEY=your_api_key_here
 ```
 
-## Run the Chatbot
+Run the chatbot:
 
 ```bash
 python chatbot.py
 ```
 
-## Example
+## Files
 
-```text
-GEMINI CHATBOT
-Type 'exit' to end the conversation.
+* `chatbot.py` – Main chatbot program
+* `.env` – Stores API key
+* `chat history.txt` – Stores conversations
+* `.gitignore` – Prevents sensitive files from being tracked
 
-You: What is Python?
-Chatbot: Python is a high-level programming language...
-
-You: exit
-Exiting the chatbot. Goodbye!
-```
-
-## Project Structure
-
-```text
-ai-chatbot/
-│
-├── chatbot.py
-├── README.md
-├── .gitignore
-└── .env
-```
